@@ -33,6 +33,31 @@ expert oversight matters, especially in multilingual and locally coded data.
 This tool aims for the middle ground: automate candidate discovery, keep
 humans deciding.
 
+## How it works
+
+1. **Input** — Upload a CSV of local source values and select the column to map.
+2. **Configure** — Set input language, clinical context, optional datapoint-set
+   filter (restrict candidates to a known set of clinically relevant concepts),
+   max candidates per term, batch size, and similarity threshold.
+3. **Retrieve** — Each term is embedded with a biomedical entity-linking model
+   (SapBERT-based) and matched against a curated concept knowledge base — built
+   from UMLS and enriched with OMOP Athena mappings — via nearest-neighbour
+   search. Requests are processed in batches, and results can optionally be
+   filtered to a specific OMOP domain (e.g. only `Drug` or `Measurement`
+   candidates).
+4. **Triage** — Each row is scored and bucketed into one of three states:
+   auto-mapped, tie-break required, or manual review (see below).
+5. **Review** — The reviewer inspects the top candidate and alternatives,
+   and validates, rejects, or manually assigns a different OMOP concept.
+6. **Learn** — When a reviewer overrides a suggestion, that (source value,
+   concept) pair is written back into the knowledge base as a new anchor for
+   the corresponding concept. Later batches — even in different projects —
+   benefit from that correction automatically, so previously resolved
+   abbreviations, lexical variants, and multilingual labels don't need to be
+   re-reviewed from scratch.
+7. **Export** — A reviewable mapping table (concept ID, domain, vocabulary,
+   similarity score, review status) is exported for direct use in ETL.
+
 ## Note
 
 This repository contains the front-end interface only. It talks to a
