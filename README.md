@@ -4,6 +4,8 @@ A human-in-the-loop, embedding-based web assistant for mapping local clinical
 source values to OMOP Standard Concepts — built to reduce repetitive Athena
 searches and speed up first-pass mapping during OMOP CDM implementation,
 while keeping a human in control of every final decision.
+<img width="1299" height="652" alt="image" src="https://github.com/user-attachments/assets/35348ab0-08d2-4d11-9b4f-2ce90de9742a" />
+
 
 ## What it does
 
@@ -57,6 +59,8 @@ humans deciding.
    re-reviewed from scratch.
 7. **Export** — A reviewable mapping table (concept ID, domain, vocabulary,
    similarity score, review status) is exported for direct use in ETL.
+   <img width="1299" height="652" alt="image" src="https://github.com/user-attachments/assets/abe8e3c2-1e56-4b8f-a2de-ec4c92ba7436" />
+
 
 ## Note
 
