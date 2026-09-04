@@ -4,7 +4,7 @@ A human-in-the-loop, embedding-based web assistant for mapping local clinical
 source values to OMOP Standard Concepts — built to reduce repetitive Athena
 searches and speed up first-pass mapping during OMOP CDM implementation,
 while keeping a human in control of every final decision.
-<img width="1299" height="652" alt="image" src="https://github.com/user-attachments/assets/35348ab0-08d2-4d11-9b4f-2ce90de9742a" />
+<img width="975" height="518" alt="image" src="https://github.com/user-attachments/assets/1021d5e8-f49a-4047-a20c-7aec62b1878f" />
 
 
 ## What it does
